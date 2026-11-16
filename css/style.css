@@ -333,7 +333,12 @@ a { color: inherit; }
 .socials svg { width: 18px; height: 18px; display: block; }
 .socials a:hover { color: var(--accent); }
 
-.footer-photo { display: none; }
+.footer-photo {
+  display: block;
+  height: 140px;
+  width: auto;            /* follows the photo's own shape, no crop or stretch */
+  background: var(--photo-fallback);
+}
 
 /* ============================================
    Mobile
@@ -366,11 +371,5 @@ a { color: inherit; }
 
 
   .site-footer { padding-top: 32px; }
-  .footer-photo {
-    display: block;
-    width: 96px;
-    height: 72px;
-    object-fit: cover;
-    background: var(--photo-fallback);
-  }
+  .footer-photo { height: 96px; }
 }
