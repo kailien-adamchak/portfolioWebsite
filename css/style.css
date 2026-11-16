@@ -1,0 +1,376 @@
+/* ============================================
+   Kai Lien Adamchak — Portfolio
+   ============================================ */
+
+/*-----------FONTS-------------*/
+
+/*Gambetta*/
+
+@font-face {
+  font-family: "Gambetta";
+  src: url("../fonts/Gambetta-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gambetta"; 
+  src: url("../fonts/Gambetta-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gambetta"; 
+  src: url("../fonts/Gambetta-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gambetta"; 
+  src: url("../fonts/Gambetta-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gambetta"; 
+  src: url("../fonts/Gambetta-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*TAY*/
+
+@font-face {
+  font-family: "Bang!"; 
+  src: url("../fonts/TAYBang!.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Birdie"; 
+  src: url("../fonts/TAYBirdieRegular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*YoungSerif*/
+
+@font-face {
+  font-family: "YoungSerif"; 
+  src: url("../fonts/YoungSerif-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "YoungSerif"; 
+  src: url("../fonts/YoungSerif-RegularItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --ink: #2b1a0e;          /* dark brown text + outlines */
+  --paper: #ffffff;        /* page background */
+  --cream: #fbf8ea;        /* card background */
+  --accent: #e8a33a;       /* active nav (orange) */
+  --link: #5aa9c4;         /* email link (teal) */
+  --photo-fallback: #e9e2d0;
+
+  --font-display: "Gambetta", Georgia, serif;      /* name, section titles */
+  --font-italic: "YoungSerif", Georgia, serif;     /* nav, tagline, card headings (italic only) */
+  --font-body: "Gambetta", Georgia, serif;         /* paragraphs, lists */
+  --font-script: "Bang!", "YoungSerif", serif;     /* sign-off, footer "Adamchak" */
+
+  --shadow: 4px 4px 0 var(--ink);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.45;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+
+a { color: inherit; }
+
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 28px 40px 48px;
+  position: relative;
+}
+
+/* color: transparent hides alt text while photos are still missing */
+.photo { background: var(--photo-fallback); object-fit: cover; color: transparent; }
+
+/* ---------- Nav ---------- */
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.nav-group { display: flex; gap: 48px; }
+
+.site-nav a {
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-size: 22px;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.site-nav a:hover,
+.site-nav a.active { color: var(--accent); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 56px 0 40px;
+}
+
+.name { margin: 0; font-weight: 400; line-height: 1; }
+
+.name-first {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(44px, 7vw, 72px);
+  letter-spacing: .02em;
+}
+
+.name-last {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(24px, 3.4vw, 34px);
+  letter-spacing: .04em;
+  margin-top: 4px;
+}
+
+.tagline {
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(30px, 4.6vw, 46px);
+  margin: 10px 0 6px;
+  line-height: 1.1;
+}
+
+.subtag { margin: 0; font-size: 19px; }
+
+
+/* ---------- About ---------- */
+.about {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  padding: 40px 0 80px;
+}
+
+.collage {
+  position: relative;
+  margin-top: 20px;
+  padding-bottom: 10%;      /* room for the small photo to hang below */
+}
+
+/* Shown at its natural proportions, so nothing is cropped */
+.photo-main {
+  position: relative;
+  width: 66%;
+  height: auto;
+  margin-left: auto;
+}
+
+.photo-small {
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 38%;
+  height: auto;
+  z-index: 1;
+}
+
+.sticker { position: absolute; z-index: 2; pointer-events: none; overflow: visible; }
+
+.sticker-flowers { width: 30%; right: -6%; bottom: -6%; }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--cream);
+  box-shadow: var(--shadow);
+  padding: 22px 26px;
+}
+
+.hi-card { position: relative; z-index: 1; }
+
+.hi-card h2 {
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1;
+  margin: 0 0 14px;
+}
+
+.hi-card p { margin: 0 0 16px; }
+
+.hi-card a { color: var(--link); }
+
+.hi-card .signoff {
+  font-family: var(--font-script);
+  font-size: 24px;
+  transform: rotate(-2deg);
+  margin: 22px 0 0;
+}
+
+
+/* ---------- More about me ---------- */
+.more { position: relative; padding-bottom: 80px; }
+
+.section-title {
+  position: relative;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 32px;
+  margin: 0 0 32px;
+}
+
+.more-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.more-col { display: flex; flex-direction: column; gap: 28px; }
+
+.skill-card h3 {
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+
+.skill-card.analog { width: 70%; margin-left: 6%; }
+.skill-card.digital { margin-top: 24px; width: 82%; }
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 14px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.list li::before { content: "·"; margin-right: 10px; }
+
+.list.two-col { columns: 2; column-gap: 24px; }
+
+/* ---------- Feature photo ---------- */
+.feature { position: relative; }
+
+.feature-photo { width: 100%; aspect-ratio: 16 / 9; }
+
+
+/* ---------- Footer ---------- */
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 56px 0 0;
+}
+
+.footer-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  margin: 0 0 4px;
+}
+
+.footer-name span {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.footer-email { font-size: 15px; text-decoration: none; }
+.footer-email:hover { text-decoration: underline; }
+
+.socials { display: flex; gap: 10px; margin-top: 8px; }
+.socials svg { width: 18px; height: 18px; display: block; }
+.socials a:hover { color: var(--accent); }
+
+.footer-photo { display: none; }
+
+/* ============================================
+   Mobile
+   ============================================ */
+@media (max-width: 720px) {
+  body { font-size: 15px; }
+
+  .page { padding: 20px 16px 32px; }
+
+  .nav-group { gap: 18px; }
+  .site-nav a { font-size: 18px; }
+
+  .hero { padding: 40px 0 24px; }
+  .subtag { font-size: 16px; }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 0 56px;
+  }
+  .collage { margin-top: 0; }
+
+  .hi-card { padding: 18px 20px; }
+
+  .section-title { font-size: 26px; }
+
+  .more-grid { grid-template-columns: 1fr; gap: 24px; }
+  .skill-card.analog,
+  .skill-card.digital { width: auto; margin: 0; }
+
+
+  .site-footer { padding-top: 32px; }
+  .footer-photo {
+    display: block;
+    width: 96px;
+    height: 72px;
+    object-fit: cover;
+    background: var(--photo-fallback);
+  }
+}
