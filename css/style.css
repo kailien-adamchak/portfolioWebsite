@@ -524,3 +524,60 @@ html:has(.project-modal[open]) { overflow: hidden; }   /* stop the page scrollin
   .modal-close { margin: -12px -6px 0 0; }
   .project-modal .project-title { font-size: 26px; }
 }
+
+/* ============================================
+   Art gallery page
+   ============================================ */
+.gallery {
+  columns: 3;
+  column-gap: 16px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.art {
+  position: relative;
+  margin: 0 0 16px;
+  break-inside: avoid;
+  background: var(--photo-fallback);   /* blank spot until a photo is added */
+  overflow: hidden;
+  cursor: default;
+}
+
+/* Hidden until it loads, so missing photos show a clean blank tile */
+.art img { display: none; }
+
+.art.has-image { aspect-ratio: auto !important; background: none; }
+.art.has-image img { display: block; width: 100%; height: auto; }
+
+/* Hover / keyboard focus: shade over the piece and show its title */
+.art figcaption {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+  background: rgba(43, 26, 14, .6);
+  color: var(--paper);
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1.15;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.art:hover figcaption,
+.art:focus-visible figcaption { opacity: 1; }
+
+.art:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.page-gallery .site-footer { padding-top: 64px; }
+
+@media (max-width: 720px) {
+  .gallery { columns: 2; column-gap: 12px; }
+  .art { margin-bottom: 12px; }
+  .art figcaption { font-size: 18px; }
+}
