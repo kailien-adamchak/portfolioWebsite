@@ -562,11 +562,12 @@ html:has(.project-modal[open]) { overflow: hidden; }   /* stop the page scrollin
   cursor: default;
 }
 
-/* Hidden until it loads, so missing photos show a clean blank tile */
-.art img { display: none; }
+/* Invisible until it loads, so missing photos show a clean blank tile.
+   (Not display:none — lazy-loaded images that aren't rendered never load.) */
+.art img { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; }
 
 .art.has-image { aspect-ratio: auto !important; background: none; }
-.art.has-image img { display: block; width: 100%; height: auto; }
+.art.has-image img { position: static; display: block; width: 100%; height: auto; opacity: 1; }
 
 /* Hover / keyboard focus: shade over the piece and show its title */
 .art figcaption {
