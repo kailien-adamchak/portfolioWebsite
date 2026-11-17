@@ -96,6 +96,7 @@
   --font-script: "Bang!", "YoungSerif", serif;     /* sign-off, footer "Adamchak" */
 
   --shadow: 4px 4px 0 var(--ink);
+  --wide: min(92vw, 1400px);   /* width of nav, footer and painting photo */
 }
 
 *,
@@ -125,6 +126,19 @@ a { color: inherit; }
   position: relative;
 }
 
+/* Wide elements break out of the page column to span most of the browser:
+   the nav, the footer and the homepage painting photo.
+   Change --wide in one place to resize all three. */
+.site-nav,
+.site-footer,
+.feature-photo {
+  width: var(--wide);
+  max-width: none;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /* color: transparent hides alt text while photos are still missing */
 .photo { background: var(--photo-fallback); object-fit: cover; color: transparent; }
 
@@ -133,7 +147,6 @@ a { color: inherit; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
   z-index: 2;
 }
 
@@ -302,7 +315,12 @@ a { color: inherit; }
 /* ---------- Feature photo ---------- */
 .feature { position: relative; }
 
-.feature-photo { width: 100%; aspect-ratio: 16 / 9; }
+/* aspect-ratio sets how much is cropped; object-position keeps the
+   paintings and easel in view (lower % = keep more of the top). */
+.feature-photo {
+  aspect-ratio: 2 / 1;
+  object-position: 50% 45%;
+}
 
 
 /* ---------- Footer ---------- */
