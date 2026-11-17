@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Kai Lien Adamchak</title>
+  <meta name="description" content="Get in touch with Kai Lien Adamchak by email, Instagram or LinkedIn." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-contact">
+
+  <div class="page">
+
+    <!-- ===== Navigation ===== -->
+    <header class="site-nav">
+      <nav class="nav-group">
+        <a href="index.html">About</a>
+        <a href="projects.html">Projects</a>
+      </nav>
+      <nav class="nav-group">
+        <a href="gallery.html">Art Gallery</a>
+        <a href="contact.html" class="active" aria-current="page">Contact</a>
+      </nav>
+    </header>
+
+    <h1 class="page-title contact-title">Contact Me</h1>
+
+    <section class="contact">
+      <!-- Add your photo as images/contact.jpg. It shows at its own shape, uncropped;
+           the blank spot is only a placeholder until the photo loads. -->
+      <div class="contact-photo-frame">
+        <img class="contact-photo" src="images/contact.jpg" alt="Kai Lien lying on the floor of an art studio surrounded by paints and an easel" />
+      </div>
+
+      <div class="contact-info">
+        <ul class="contact-links">
+          <li>
+            <a href="https://instagram.com/" aria-label="Instagram">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <defs>
+                  <radialGradient id="ig-grad" cx="0.3" cy="1.05" r="1.2">
+                    <stop offset="0" stop-color="#fdd56e" />
+                    <stop offset=".25" stop-color="#fa8f3c" />
+                    <stop offset=".55" stop-color="#e1306c" />
+                    <stop offset=".85" stop-color="#9b3fbf" />
+                    <stop offset="1" stop-color="#5a4fcf" />
+                  </radialGradient>
+                </defs>
+                <rect width="48" height="48" rx="12" fill="url(#ig-grad)" />
+                <rect x="11" y="11" width="26" height="26" rx="8" fill="none" stroke="#fff" stroke-width="3.2" />
+                <circle cx="24" cy="24" r="6.3" fill="none" stroke="#fff" stroke-width="3.2" />
+                <circle cx="31.6" cy="16.4" r="2" fill="#fff" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:kailien.adamchak@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M6 40h8V22L6 16z" fill="#4285f4" />
+                <path d="M34 40h8V16l-8 6z" fill="#34a853" />
+                <path d="M34 12v10l8-6v-2.5c0-3.4-3.9-5.4-6.6-3.3z" fill="#fbbc04" />
+                <path d="M14 22V12l10 7.5L34 12v10l-10 7.5z" fill="#ea4335" />
+                <path d="M6 13.5V16l8 6V12l-1.4-1.1C9.9 8.8 6 10.1 6 13.5z" fill="#c5221f" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/" aria-label="LinkedIn">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <rect width="48" height="48" rx="9" fill="#2867b2" />
+                <circle cx="14.5" cy="14.5" r="3.4" fill="#fff" />
+                <rect x="11.5" y="20" width="6" height="17" fill="#fff" />
+                <path d="M22 20h5.7v2.4c.9-1.6 2.9-2.9 5.6-2.9 5 0 6.2 3.2 6.2 7.6V37h-6v-8.7c0-2.1-.3-3.9-2.6-3.9s-2.9 1.6-2.9 3.8V37h-6z" fill="#fff" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+
+        <div class="card contact-card">
+          <p>
+            making prints of herons + listening to pop music + searching for the sound of water
+            rushing by + brewing coffee and tea + journaling about my thoughts + shopping for
+            whimsical stickers + pspspsing to a new cat + slowly reading historical nonfiction +
+            searching for meaning in the chaos
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer">
+      <div>
+        <p class="footer-name">KAI LIEN <span>Adamchak</span></p>
+        <a class="footer-email" href="mailto:kailien.adamchak@gmail.com">kailien.adamchak@gmail.com</a>
+        <div class="socials">
+          <a href="https://instagram.com/" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://linkedin.com/" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg>
+          </a>
+        </div>
+      </div>
+      <img class="footer-photo" src="images/childhood.jpg" alt="" aria-hidden="true" />
+    </footer>
+
+  </div>
+
+  <script>
+    // Show the photo once it loads; until then the frame stays a blank placeholder.
+    const photo = document.querySelector('.contact-photo');
+    const show = () => photo.parentElement.classList.add('has-image');
+    if (photo.complete && photo.naturalWidth) show();
+    else photo.addEventListener('load', show);
+  </script>
+</body>
+</html>

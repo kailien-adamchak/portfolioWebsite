@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Art Gallery — Kai Lien Adamchak</title>
+  <meta name="description" content="Paintings, prints and sketches by Kai Lien Adamchak." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-gallery">
+
+  <div class="page">
+
+    <!-- ===== Navigation ===== -->
+    <header class="site-nav">
+      <nav class="nav-group">
+        <a href="index.html">About</a>
+        <a href="projects.html">Projects</a>
+      </nav>
+      <nav class="nav-group">
+        <a href="gallery.html" class="active" aria-current="page">Art Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <h1 class="page-title">ART GALLERY</h1>
+
+    <!-- ===== Gallery =====
+         To add a piece: put the photo in images/gallery/ with the file name below.
+         The style="aspect-ratio" only shapes the blank spot; once the photo loads it
+         shows at its own shape, uncropped. Change the figcaption to set the hover title. -->
+    <section class="gallery">
+      <figure class="art" tabindex="0" style="aspect-ratio: 3 / 4.2">
+        <img src="images/gallery/cow.jpg" alt="Highland Cow" loading="lazy" />
+        <figcaption>Highland Cow</figcaption>
+      </figure>
+      <figure class="art" tabindex="0" style="aspect-ratio: 3 / 3.5">
+        <img src="images/gallery/print-collage.jpg" alt="Print Collage" loading="lazy" />
+        <figcaption>Print Collage</figcaption>
+      </figure>
+      <figure class="art" tabindex="0" style="aspect-ratio: 4 / 3">
+        <img src="images/gallery/sketchbook.jpg" alt="Sketchbook" loading="lazy" />
+        <figcaption>Sketchbook</figcaption>
+      </figure>
+      <figure class="art" tabindex="0" style="aspect-ratio: 3 / 4">
+        <img src="images/gallery/red-sketch.jpg" alt="Red Sketch" loading="lazy" />
+        <figcaption>Red Sketch</figcaption>
+      </figure>
+      <figure class="art" tabindex="0" style="aspect-ratio: 4 / 3">
+        <img src="images/gallery/sardines.jpg" alt="Pete's Sardines" loading="lazy" />
+        <figcaption>Pete's Sardines</figcaption>
+      </figure>
+      <figure class="art" tabindex="0" style="aspect-ratio: 3 / 4">
+        <img src="images/gallery/lovebirds.jpg" alt="Lovebirds" loading="lazy" />
+        <figcaption>Lovebirds</figcaption>
+      </figure>
+      <figure class="art" tabindex="0" style="aspect-ratio: 3 / 4">
+        <img src="images/gallery/pink-bird.jpg" alt="Pink Bird" loading="lazy" />
+        <figcaption>Pink Bird</figcaption>
+      </figure>
+      <figure class="art" tabindex="0" style="aspect-ratio: 4 / 4.2">
+        <img src="images/gallery/bouquet.jpg" alt="Bouquet" loading="lazy" />
+        <figcaption>Bouquet</figcaption>
+      </figure>
+      <figure class="art" tabindex="0" style="aspect-ratio: 4 / 4.5">
+        <img src="images/gallery/death-of-truth.jpg" alt="The Death of Truth" loading="lazy" />
+        <figcaption>The Death of Truth</figcaption>
+      </figure>
+      <figure class="art" tabindex="0" style="aspect-ratio: 3 / 5">
+        <img src="images/gallery/race-day.jpg" alt="Race Day" loading="lazy" />
+        <figcaption>Race Day</figcaption>
+      </figure>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer">
+      <div>
+        <p class="footer-name">KAI LIEN <span>Adamchak</span></p>
+        <a class="footer-email" href="mailto:kailien.adamchak@gmail.com">kailien.adamchak@gmail.com</a>
+        <div class="socials">
+          <a href="https://instagram.com/" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://linkedin.com/" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg>
+          </a>
+        </div>
+      </div>
+      <img class="footer-photo" src="images/childhood.jpg" alt="" aria-hidden="true" />
+    </footer>
+
+  </div>
+
+  <script>
+    // Show each photo once it loads; until then the tile stays a blank placeholder.
+    document.querySelectorAll('.art img').forEach((img) => {
+      const show = () => img.closest('.art').classList.add('has-image');
+      if (img.complete && img.naturalWidth) show();
+      else img.addEventListener('load', show);
+    });
+  </script>
+</body>
+</html>
