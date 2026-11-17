@@ -366,7 +366,8 @@ a { color: inherit; }
 
   .page { padding: 20px 16px 32px; }
 
-  .nav-group { gap: 18px; }
+  /* Phone: drop the left/right grouping so all four links spread evenly */
+  .nav-group { display: contents; }
   .site-nav a { font-size: 18px; }
 
   .hero { padding: 40px 0 24px; }
