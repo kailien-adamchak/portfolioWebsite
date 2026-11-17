@@ -581,3 +581,56 @@ html:has(.project-modal[open]) { overflow: hidden; }   /* stop the page scrollin
   .art { margin-bottom: 12px; }
   .art figcaption { font-size: 18px; }
 }
+
+/* ============================================
+   Contact page
+   ============================================ */
+.contact-title { font-weight: 600; letter-spacing: 0; margin-bottom: 28px; }
+
+.contact {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 400px);
+  justify-content: center;
+  gap: 32px 40px;
+  align-items: start;
+}
+
+/* Blank placeholder until the photo loads, then the photo's own shape */
+.contact-photo-frame { aspect-ratio: 5 / 7; background: var(--photo-fallback); }
+.contact-photo { display: none; }
+.contact-photo-frame.has-image { aspect-ratio: auto; background: none; }
+.contact-photo-frame.has-image .contact-photo { display: block; width: 100%; height: auto; }
+
+.contact-links {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  margin: 20px 0 22px;
+  padding: 0;
+}
+
+.contact-links a { display: block; transition: transform .15s ease; }
+.contact-links a:hover,
+.contact-links a:focus-visible { transform: translateY(-3px); }
+.contact-links svg { width: 36px; height: 36px; display: block; }
+
+.contact-card { margin-left: 18px; padding: 20px 22px 26px; }
+
+.contact-card p {
+  margin: 0;
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.page-contact .site-footer { padding-top: 48px; }
+
+@media (max-width: 720px) {
+  .contact { grid-template-columns: 1fr; }
+  .contact-photo-frame { width: 80%; margin: 0 auto; }
+  /* Phone: icons move below the text box */
+  .contact-info { display: flex; flex-direction: column; }
+  .contact-links { order: 2; justify-content: flex-end; margin: 24px 0 0; }
+  .contact-card { margin-left: 0; }
+}
