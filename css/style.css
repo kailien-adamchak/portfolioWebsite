@@ -857,7 +857,7 @@ html:has(.project-modal[open]) { overflow: hidden; }   /* stop the page scrollin
   list-style: none;
   display: flex;
   gap: 16px;
-  margin: 20px 0 22px;
+  margin: 20px 0 22px 18px;   /* left edge lines up with .contact-card below */
   padding: 0;
 }
 
