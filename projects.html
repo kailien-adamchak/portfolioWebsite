@@ -106,8 +106,7 @@
   </div>
 
   <!-- ===== Project pop-ups =====
-       Fill in the "More about this project" text and add extra photos to each .modal-gallery.
-       Photos in the gallery keep their own shape, so wide and tall images both work. -->
+       Each card above opens the <dialog> with the matching id. -->
 
   <!-- KingMaker uses the longer case-study layout (class "case").
        Every photo spot is a <figure class="ph">: put your photo at the src path shown and it
@@ -264,13 +263,7 @@
         constraints.
       </p>
 
-      <button class="case-button" type="button" aria-expanded="false" aria-controls="kingmaker-more">More Process Photos</button>
-      <div class="modal-gallery" id="kingmaker-more" hidden>
-        <figure class="ph" style="--ar: 4 / 3"><img src="images/projects/kingmaker/process-1.jpg" alt="Process photo" /></figure>
-        <figure class="ph" style="--ar: 4 / 3"><img src="images/projects/kingmaker/process-2.jpg" alt="Process photo" /></figure>
-        <figure class="ph" style="--ar: 4 / 3"><img src="images/projects/kingmaker/process-3.jpg" alt="Process photo" /></figure>
-      </div>
-
+      <h3 class="case-subhead">More Process Photos</h3>
       <div class="case-collage">
         <figure class="ph" style="--ar: 4 / 3"><img src="images/projects/kingmaker/playtest-1.jpg" alt="Players testing the game" /></figure>
         <figure class="ph" style="--ar: 4 / 3"><img src="images/projects/kingmaker/playtest-2.jpg" alt="Players testing the game" /></figure>

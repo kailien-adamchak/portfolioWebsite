@@ -527,13 +527,6 @@ html:has(.project-modal[open]) { overflow: hidden; }   /* stop the page scrollin
 
 .project-modal .placeholder { opacity: .6; font-family: var(--font-italic); font-style: italic; }
 
-.modal-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
-  align-items: start;
-}
-.modal-gallery img { width: 100%; height: auto; }
 
 /* ---------- Case-study pop-up (KingMaker layout) ---------- */
 .project-modal.case { width: min(960px, calc(100vw - 32px)); padding: 36px 48px 48px; }
@@ -653,22 +646,7 @@ html:has(.project-modal[open]) { overflow: hidden; }   /* stop the page scrollin
   background: var(--accent);
 }
 
-.case-button {
-  display: block;
-  margin: 8px auto 28px;
-  padding: 9px 22px 11px calc(22px + .06em);   /* centres Birdie's capitals; see .tags li */
-  font-family: "Birdie", var(--font-body);
-  font-size: 13px;
-  letter-spacing: .06em;
-  color: var(--ink);
-  background: var(--paper);
-  border: 1px solid var(--ink);
-  box-shadow: var(--shadow);
-  cursor: pointer;
-}
-.case-button:hover { background: var(--accent); }
-#kingmaker-more { margin-bottom: 28px; }
-.modal-gallery[hidden] { display: none; }
+.project-modal.case .case-subhead { margin: 32px 0 16px; }   /* header inside a section */
 
 .case-collage { position: relative; display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 12px; }
 .case-collage .ph:last-child { grid-column: 2 / 4; margin-top: -8%; box-shadow: var(--shadow); z-index: 1; }

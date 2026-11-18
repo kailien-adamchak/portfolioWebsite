@@ -51,15 +51,3 @@ document.querySelectorAll('.ph img').forEach((img) => {
   if (img.complete && img.naturalWidth) show();
   else img.addEventListener('load', show);
 });
-
-// "More Process Photos" buttons open and close the photo group they point to
-document.querySelectorAll('.case-button[aria-controls]').forEach((button) => {
-  const target = document.getElementById(button.getAttribute('aria-controls'));
-  const label = button.textContent;
-  button.addEventListener('click', () => {
-    const open = target.hidden;
-    target.hidden = !open;
-    button.setAttribute('aria-expanded', String(open));
-    button.textContent = open ? 'Fewer Photos' : label;
-  });
-});
