@@ -670,8 +670,50 @@ html:has(.project-modal[open]) { overflow: hidden; }   /* stop the page scrollin
 .case-collage { position: relative; display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 12px; }
 .case-collage .ph:last-child { grid-column: 2 / 4; margin-top: -8%; box-shadow: var(--shadow); z-index: 1; }
 
+/* "crop" photo spots keep the box's shape and trim the photo to fill it */
+.ph.crop.has-image { aspect-ratio: var(--ar, 4 / 3); }
+.ph.crop.has-image img { position: absolute; height: 100%; object-fit: cover; }
+
+/* Band Merch pieces */
+.case-feature { width: 72%; margin-left: -48px; }           /* big photo hugging the left edge */
+.case-logo-panel {
+  width: min(560px, 76%);
+  margin: 32px auto 0;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  background: #ede0b8;            /* same cream as cattledogs-logo.png */
+  border-radius: 24px;
+}
+.case-logo-panel .ph { width: min(240px, 60%); }
+.case-aside { width: 50%; margin: 24px 0 32px auto; }    /* text block on the right half */
+.case-note { width: 55%; margin-top: 24px; }               /* text block on the left half */
+
+.case-row3 { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 10px; margin: 0 -48px; }
+.case-row3.even { grid-template-columns: repeat(3, 1fr); }
+.case-row3.gallery-row { margin: 0; gap: 16px; align-items: center; }
+
+.case-banner { position: relative; margin: 0 -48px 32px; }
+.case-banner-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: 34%;
+  background: #fff;
+  padding: 8px;
+}
+
 @media (max-width: 720px) {
   .project-modal.case { padding: 28px 20px 32px; }
+  .case-feature { width: 88%; margin-left: -20px; }
+  .case-logo-panel { width: 100%; }
+  .case-aside,
+  .case-note { width: auto; }
+  .case-row3 { margin: 0 -20px; gap: 6px; }
+  .case-row3.gallery-row { margin: 0; gap: 10px; }
+  .case-banner { margin: 0 -20px 24px; }
+  .case-banner-logo { width: 46%; }
   .case-strip { margin-inline: -20px; padding: 0 20px 6px; }
   .type-fonts { max-width: 220px; margin: 16px 0 24px; }
   .type-spec { margin-bottom: 16px; }
