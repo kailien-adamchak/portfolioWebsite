@@ -368,8 +368,10 @@ a { color: inherit; }
 
 .footer-photo {
   display: block;
-  height: 140px;
-  width: auto;            /* follows the photo's own shape, no crop or stretch */
+  width: 122px;
+  aspect-ratio: 1 / 1;            /* square: the photo is a bit tall, so... */
+  object-fit: cover;
+  object-position: 50% 100%;      /* ...the extra is trimmed off the top only */
   background: var(--photo-fallback);
 }
 
@@ -405,7 +407,7 @@ a { color: inherit; }
 
 
   .site-footer { padding-top: 32px; }
-  .footer-photo { height: 96px; }
+  .footer-photo { width: 84px; }
 }
 
 /* ============================================
