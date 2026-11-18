@@ -384,25 +384,110 @@
     </section>
   </dialog>
 
-  <dialog class="project-modal" id="lotus" aria-labelledby="lotus-title">
+  <!-- Lotus uses the same case-study layout as KingMaker.
+       Photos and renders go in images/projects/lotus/ with the filename shown in each blank box.
+       Renders exported as transparent PNGs sit straight on the page with no box behind them. -->
+  <dialog class="project-modal case" id="lotus" aria-labelledby="lotus-title">
     <button class="modal-close" type="button" aria-label="Close">&times;</button>
-    <img class="photo modal-hero" src="images/projects/lotus.jpg" alt="3D-printed pink lotus flower installation on a teal base" />
-    <h2 class="project-title" id="lotus-title"><span class="project-num">03</span> Lotus Installation</h2>
-    <ul class="tags">
-      <li>3D Modeling</li>
-      <li>Programming</li>
-    </ul>
-    <p>
-      Utilizing my knowledge of <strong>3D modeling, printing, and Arduino circuitry</strong> I
-      created an interactive art installation for the ATLAS EXPO '25. Inspired by lotus flowers,
-      guests would approach the flower's proximity sensor causing the 3D modeled piston system to
-      open the flowers pedals.
-    </p>
-    <h3>More about this project</h3>
-    <p class="placeholder">Add how the mechanism and sensor work, build photos, or a video of the flower opening here.</p>
-    <div class="modal-gallery">
-      <!-- <img class="photo" src="images/projects/lotus-2.jpg" alt="Describe the photo" /> -->
+
+    <!-- Title -->
+    <header class="case-head">
+      <h2 class="project-title" id="lotus-title"><span class="project-num">03</span> Lotus Installation</h2>
+      <p class="case-sub">3D Printed Interactive Art</p>
+      <ul class="tags">
+        <li>3D Modeling</li>
+        <li>Programming</li>
+      </ul>
+      <p class="case-intro">
+        Utilizing my knowledge of <strong>3D modeling, printing, and Arduino circuitry</strong> I
+        created an interactive art installation for the ATLAS EXPO '25. Inspired by lotus flowers,
+        guests would approach the flower's proximity sensor causing the 3D modeled piston system to
+        open the flower's petals.
+      </p>
+    </header>
+
+    <!-- Hero photos -->
+    <div class="lotus-pair">
+      <figure class="ph" style="--ar: 4 / 5"><img src="images/projects/lotus/hero-1.jpg" alt="Pink 3D-printed lotus on its teal vase" /></figure>
+      <figure class="ph" style="--ar: 4 / 3"><img src="images/projects/lotus/hero-2.jpg" alt="Close-up of the lotus petals open" /></figure>
     </div>
+
+    <!-- 01 3D modeling -->
+    <section class="case-section">
+      <h3><span class="project-num">01</span> 3D Modeling</h3>
+      <p>
+        For this project I mainly used the platform OnShape, a web based solids modeler that allows
+        for collaborative work. From start to finish the design for the project's main mechanism
+        went through many iterations some of which are pictured here. In the end the project
+        allowed for me to practice iterative design, as well as the nuances and tolerances
+        required to create a product that can move in multiple ways.
+      </p>
+
+      <div class="lotus-models">
+        <figure class="ph" style="--ar: 1 / 1"><img src="images/projects/lotus/model-1.png" alt="Early version of the piston mechanism model" /></figure>
+        <figure class="ph" style="--ar: 1 / 1"><img src="images/projects/lotus/model-2.png" alt="Later version of the piston mechanism model" /></figure>
+        <figure class="ph" style="--ar: 1 / 1"><img src="images/projects/lotus/model-3.png" alt="Wireframe of the final mechanism" /></figure>
+      </div>
+
+      <div class="case-split">
+        <div class="lotus-mech">
+          <figure class="ph" style="--ar: 1 / 2"><img src="images/projects/lotus/mech-1.png" alt="Servo-to-piston linkage model" /></figure>
+          <figure class="ph" style="--ar: 1 / 2"><img src="images/projects/lotus/mech-2.png" alt="Servo-to-piston linkage model, second view" /></figure>
+        </div>
+        <p>
+          Other than the main mechanism visible in the middle of the piece there is also a system
+          inside the flower's vase that converts the rotational motion from a servo to a piston
+          motion that is used by the main mechanism.
+        </p>
+      </div>
+
+      <div class="lotus-band">
+        <figure class="ph" style="--ar: 4 / 3"><img src="images/projects/lotus/assembly.jpg" alt="Printed petals attached to the mechanism during assembly" /></figure>
+        <figure class="ph" style="--ar: 4 / 5"><img src="images/projects/lotus/render-full.png" alt="Full 3D render of the lotus and vase" /></figure>
+      </div>
+
+      <div class="case-split lotus-petals">
+        <p>
+          I also modeled more decorative elements such as the petals and vase that really brought
+          the whole piece together. Each petal is also attached to the main mechanism using a ball
+          and socket joint. This was my first time 3D printing a socket joint and I had to take
+          into account the tolerances of PLA, the material I was using to print. At one point I
+          tested a different version of the socket that was printed with TPU instead and did not
+          find it to be as effective. Instead I stuck with PLA and modeled the socket to have
+          slits on each side to allow for the plastic to bend enough to insert the "ball."
+        </p>
+        <div class="lotus-stack">
+          <figure class="ph" style="--ar: 5 / 2"><img src="images/projects/lotus/petal-joint.png" alt="Petal model with its ball and socket joint" /></figure>
+          <figure class="ph" style="--ar: 4 / 3"><img src="images/projects/lotus/lotus-render.png" alt="Render of the lotus flower" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 Programming -->
+    <section class="case-section">
+      <h3><span class="project-num">02</span> Programming + Arduino</h3>
+      <div class="lotus-pair">
+        <figure class="ph" style="--ar: 3 / 4"><img src="images/projects/lotus/circuit-1.jpg" alt="Arduino and breadboard wired inside the vase" /></figure>
+        <figure class="ph" style="--ar: 4 / 3"><img src="images/projects/lotus/circuit-2.jpg" alt="The open vase showing the servo and wiring" /></figure>
+      </div>
+      <div class="case-split">
+        <figure class="ph" style="--ar: 4 / 3"><img src="images/projects/lotus/circuit-diagram.png" alt="Circuit diagram of the Arduino Uno, ultrasonic sensor and servo" /></figure>
+        <p>
+          The Arduino circuit used for this project consisted of an Arduino Uno, small bread
+          board, ultrasonic sensor and servo motor output. The circuit and corresponding code were
+          rather simple. All Arduino are programmed in a C++ based library.
+        </p>
+      </div>
+    </section>
+
+    <!-- 03 Final product -->
+    <section class="case-section">
+      <h3><span class="project-num">03</span> Final Product</h3>
+      <div class="lotus-pair even">
+        <figure class="ph" style="--ar: 3 / 4"><img src="images/projects/lotus/final-1.jpg" alt="The finished lotus installation" /></figure>
+        <figure class="ph" style="--ar: 3 / 4"><img src="images/projects/lotus/final-2.jpg" alt="The finished lotus installation from another angle" /></figure>
+      </div>
+    </section>
   </dialog>
 
   <script src="js/projects.js"></script>
