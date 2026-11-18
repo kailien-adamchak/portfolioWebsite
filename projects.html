@@ -109,28 +109,174 @@
        Fill in the "More about this project" text and add extra photos to each .modal-gallery.
        Photos in the gallery keep their own shape, so wide and tall images both work. -->
 
-  <dialog class="project-modal" id="kingmaker" aria-labelledby="kingmaker-title">
+  <!-- KingMaker uses the longer case-study layout (class "case").
+       Every photo spot is a <figure class="ph">: put your photo at the src path shown and it
+       appears automatically. Until then the spot shows a blank box labelled with that filename.
+       --ar is the blank box's shape (width / height); once a photo loads it keeps its own shape. -->
+  <dialog class="project-modal case" id="kingmaker" aria-labelledby="kingmaker-title">
     <button class="modal-close" type="button" aria-label="Close">&times;</button>
-    <img class="photo modal-hero" src="images/projects/kingmaker.jpg" alt="KingMaker board game box, cards and pieces" />
-    <h2 class="project-title" id="kingmaker-title"><span class="project-num">01</span> KingMaker</h2>
-    <ul class="tags">
-      <li>Graphic Design</li>
-      <li>Branding</li>
-      <li>Product Design</li>
-      <li>Prototyping</li>
-      <li>UI/UX</li>
-    </ul>
-    <p>
-      Kingmaker was my senior <strong>capstone project</strong> for my last semester at CU
-      Boulder's B.S. in Creative Technology and Design. Working with Ethan Cuenca as my partner
-      we <strong>created a table top game</strong> with the goal of encouraging civic discussion
-      between high school to early 20s players.
-    </p>
-    <h3>More about this project</h3>
-    <p class="placeholder">Add the process, your role, and the outcome here.</p>
-    <div class="modal-gallery">
-      <!-- <img class="photo" src="images/projects/kingmaker-2.jpg" alt="Describe the photo" /> -->
+
+    <!-- Title -->
+    <header class="case-head">
+      <h2 class="project-title" id="kingmaker-title"><span class="project-num">01</span> KingMaker</h2>
+      <p class="case-sub">Tabletop AR Board Game</p>
+      <ul class="tags">
+        <li>Graphic Design</li>
+        <li>Branding</li>
+        <li>Product Design</li>
+        <li>Prototyping</li>
+        <li>UI/UX</li>
+      </ul>
+      <p class="case-intro">
+        Kingmaker was my senior <strong>capstone project</strong> for my last semester at CU
+        Boulder's B.S. in Creative Technology and Design. Working with Ethan Cuenca as my partner
+        we <strong>created a table top game</strong> with the goal of encouraging civic discussion
+        between high school to early 20s players.
+      </p>
+    </header>
+
+    <!-- Hero photo strip (scrolls sideways on small screens) -->
+    <div class="case-strip case-hero">
+      <figure class="ph" style="--ar: 2 / 3"><img src="images/projects/kingmaker.jpg" alt="KingMaker board game box, cards and pieces" /></figure>
+      <figure class="ph" style="--ar: 16 / 10"><img src="images/projects/kingmaker/hero-wide.jpg" alt="KingMaker game laid out on a table" /></figure>
+      <figure class="ph" style="--ar: 4 / 5"><img src="images/projects/kingmaker/hero-3.jpg" alt="KingMaker box and cards" /></figure>
     </div>
+
+    <!-- Logo -->
+    <div class="case-logo">
+      <figure class="ph" style="--ar: 3 / 1"><img src="images/projects/kingmaker/logo.png" alt="KingMaker logo" /></figure>
+    </div>
+
+    <!-- About -->
+    <section class="case-section">
+      <h3>About</h3>
+      <p>
+        Are you a college student? Does talking about politics give you a sense of existential or
+        social dread? Do you avoid talking about politics because of the anxiety it causes you? We
+        both know that politics and civics in general are important, they touch every part of our
+        lives after all, but how do we talk about it? So enter KingMaker, a debate style board game
+        that incorporates AR that was created for just that. Games are disarming, fun, and a great
+        way to start a conversation for young audiences. In this game, play as a crab competing
+        through a series of civic-based debates from the crab kingdom of Crustacea in order to win
+        the race for King Crab.
+      </p>
+      <p class="case-callout">
+        Warning: they cause unexpected alliances, friendly rivalry and actual learning about
+        political processes.
+      </p>
+    </section>
+
+    <!-- 01 Branding -->
+    <section class="case-section">
+      <h3><span class="project-num">01</span> Branding + Graphic Design</h3>
+      <div class="brand">
+        <!-- Colour palette: change the hex codes to match the real brand colours -->
+        <div class="palette" aria-label="KingMaker colour palette">
+          <span style="--c: #f2b24a">#F2B24A</span>
+          <span style="--c: #e85545">#E85545</span>
+          <span style="--c: #f7cf7a">#F7CF7A</span>
+          <span style="--c: #1f1f1f">#1F1F1F</span>
+          <span style="--c: #3e5c76">#3E5C76</span>
+          <span style="--c: #49a3c8">#49A3C8</span>
+        </div>
+        <div class="type-spec">
+          <img class="type-fonts" src="images/projects/kingmaker/fonts.png" alt="Brand typefaces: Rosette and Inclusive Sans" />
+          <div class="ui-buttons">
+            <img src="images/projects/kingmaker/exit-button.png" alt="Exit button" />
+            <img src="images/projects/kingmaker/play-button.png" alt="Play button" />
+            <img src="images/projects/kingmaker/next-button.png" alt="Next button" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Character cards strip -->
+    <div class="case-strip case-cards">
+      <figure class="ph" style="--ar: 5 / 7"><img src="images/projects/kingmaker/card-wonton.jpg" alt="Winston character card" /></figure>
+      <figure class="ph" style="--ar: 5 / 7"><img src="images/projects/kingmaker/card-cancer.jpg" alt="Cancer character card" /></figure>
+      <figure class="ph" style="--ar: 5 / 7"><img src="images/projects/kingmaker/card-shelldon.jpg" alt="Shelldon character card" /></figure>
+      <figure class="ph" style="--ar: 5 / 7"><img src="images/projects/kingmaker/card-crabby.jpg" alt="Crabby character card" /></figure>
+      <figure class="ph" style="--ar: 5 / 7"><img src="images/projects/kingmaker/card-claude.jpg" alt="Claude character card" /></figure>
+      <figure class="ph" style="--ar: 5 / 7"><img src="images/projects/kingmaker/card-hermie.jpg" alt="Hermie character card" /></figure>
+    </div>
+
+    <!-- 02 Product design -->
+    <section class="case-section">
+      <h3><span class="project-num">02</span> Product Design</h3>
+
+      <div class="case-split">
+        <figure class="ph" style="--ar: 4 / 3"><img src="images/projects/kingmaker/product-1.jpg" alt="KingMaker packaging" /></figure>
+        <p>
+          For this project I was in charge of all product design required to create a fully
+          functional board game. This included the box’s packaging design as well as the
+          cards, tokens, and any rules. As the person in charge of graphic and product
+          design I also wrote all of the game’s copy of the packaging and in the rule book.
+        </p>
+      </div>
+
+      <div class="case-cardgrid">
+        <figure class="ph" style="--ar: 3 / 4"><img src="images/projects/kingmaker/packaging.jpg" alt="Game board design" /></figure>
+        <figure class="ph" style="--ar: 3 / 4"><img src="images/projects/kingmaker/packaging-back.jpg" alt="KingMaker card back" /></figure>
+        <div class="case-mini">
+          <figure class="ph" style="--ar: 5 / 7"><img src="images/projects/kingmaker/product-card-1.jpg" alt="Game card" /></figure>
+          <figure class="ph" style="--ar: 5 / 7"><img src="images/projects/kingmaker/product-card-2.jpg" alt="Game card" /></figure>
+          <figure class="ph" style="--ar: 5 / 7"><img src="images/projects/kingmaker/product-card-3.jpg" alt="Game card" /></figure>
+          <figure class="ph" style="--ar: 5 / 7"><img src="images/projects/kingmaker/product-card-4.jpg" alt="Game card" /></figure>
+        </div>
+      </div>
+
+      <div class="case-split reverse">
+        <!-- Tokens cluster: two coins and two event cards arranged on top of each other.
+             Each piece's position, size and tilt is set in style.css under ".tokens". -->
+        <div class="tokens" role="img" aria-label="KingMaker voting coins and event cards, front and back">
+          <img class="token-card-back" src="images/projects/kingmaker/eventcard-back.png" alt="" />
+          <img class="token-card-front" src="images/projects/kingmaker/eventcard-front.png" alt="" />
+          <img class="token-coin-front" src="images/projects/kingmaker/coin-front.png" alt="" />
+          <img class="token-coin-back" src="images/projects/kingmaker/coin-back.png" alt="" />
+        </div>
+        <p>
+          Within the box, there was also an insert that held all of the game’s assets. I was
+          in charge of 3D modeling and printing this insert that went though multiple
+          iterations before being finalized.
+        </p>
+      </div>
+
+      <div class="case-overlap">
+        <figure class="ph" style="--ar: 16 / 9"><img src="images/projects/kingmaker/product-box.jpg" alt="Open KingMaker box with pieces inside" /></figure>
+        <figure class="ph" style="--ar: 16 / 9"><img src="images/projects/kingmaker/product-insert.png" alt="3D model of the box insert" /></figure>
+      </div>
+    </section>
+
+    <!-- 03 User testing -->
+    <section class="case-section">
+      <h3><span class="project-num">03</span> User Testing + Iteration</h3>
+      <div class="case-band">
+        <figure class="ph" style="--ar: 3 / 4"><img src="images/projects/kingmaker/testing-1.jpg" alt="Early prototype" /></figure>
+        <figure class="ph" style="--ar: 3 / 4"><img src="images/projects/kingmaker/testing-2.jpg" alt="Prototype box" /></figure>
+        <figure class="ph" style="--ar: 3 / 4"><img src="images/projects/kingmaker/testing-3.jpg" alt="Prototype cards" /></figure>
+      </div>
+      <p>
+        In order to create a functioning game that is not just educational but also fun, the
+        game design and game play went through multiple iterations with lots of play testing
+        throughout. Above are multiple iterations of not just the graphic design of the box
+        but also the game play and product design. Iterations were made with easy to access
+        materials in order to complete and test as many versions as possible within the time
+        constraints.
+      </p>
+
+      <button class="case-button" type="button" aria-expanded="false" aria-controls="kingmaker-more">More Process Photos</button>
+      <div class="modal-gallery" id="kingmaker-more" hidden>
+        <figure class="ph" style="--ar: 4 / 3"><img src="images/projects/kingmaker/process-1.jpg" alt="Process photo" /></figure>
+        <figure class="ph" style="--ar: 4 / 3"><img src="images/projects/kingmaker/process-2.jpg" alt="Process photo" /></figure>
+        <figure class="ph" style="--ar: 4 / 3"><img src="images/projects/kingmaker/process-3.jpg" alt="Process photo" /></figure>
+      </div>
+
+      <div class="case-collage">
+        <figure class="ph" style="--ar: 4 / 3"><img src="images/projects/kingmaker/playtest-1.jpg" alt="Players testing the game" /></figure>
+        <figure class="ph" style="--ar: 4 / 3"><img src="images/projects/kingmaker/playtest-2.jpg" alt="Players testing the game" /></figure>
+        <figure class="ph" style="--ar: 16 / 10"><img src="images/projects/kingmaker/final.jpg" alt="Finished KingMaker game" /></figure>
+      </div>
+    </section>
   </dialog>
 
   <dialog class="project-modal" id="band-merch" aria-labelledby="band-merch-title">
