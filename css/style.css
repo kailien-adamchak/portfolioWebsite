@@ -331,11 +331,26 @@ a { color: inherit; }
   padding: 56px 0 0;
 }
 
+/* Left side: name, email and icons stacked with 12px of visible space between each line
+   (the gap below). The fonts carry different amounts of empty space above and below their
+   letters, so the email and icons are pulled up to make the gaps between the actual letters
+   match; change only the gap to resize both. */
+.site-footer > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.footer-name,
+.footer-email { line-height: 1; }
+.footer-email { margin-top: -10.4px; }   /* bottom of the name's capitals -> top of the email */
+.socials { margin-top: -2.8px; }         /* email's baseline -> top of the icons */
+
 .footer-name {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 22px;
-  margin: 0 0 4px;
+  margin: 0;
 }
 
 .footer-name span {
@@ -347,7 +362,7 @@ a { color: inherit; }
 .footer-email { font-size: 15px; text-decoration: none; }
 .footer-email:hover { text-decoration: underline; }
 
-.socials { display: flex; gap: 10px; margin-top: 8px; }
+.socials { display: flex; gap: 10px; }
 .socials svg { width: 18px; height: 18px; display: block; }
 .socials a:hover { color: var(--accent); }
 
@@ -649,7 +664,9 @@ html:has(.project-modal[open]) { overflow: hidden; }   /* stop the page scrollin
 .project-modal.case .case-subhead { margin: 32px 0 16px; }   /* header inside a section */
 
 .case-collage { position: relative; display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 12px; }
-.case-collage .ph:last-child { grid-column: 2 / 4; margin-top: -8%; box-shadow: var(--shadow); z-index: 1; }
+/* Final photo sits below the two testing photos (no overlap), nudged left of the second
+   one's edge. Raise or lower the -6% to shift it more or less. */
+.case-collage .ph:last-child { grid-column: 2 / 4; margin-left: -6%; box-shadow: var(--shadow); z-index: 1; }
 
 /* "crop" photo spots keep the box's shape and trim the photo to fill it */
 .ph.crop.has-image { aspect-ratio: var(--ar, 4 / 3); }
@@ -708,7 +725,7 @@ html:has(.project-modal[open]) { overflow: hidden; }   /* stop the page scrollin
   .case-cardgrid { grid-template-columns: 1fr 1fr; }
   .case-mini { grid-column: 1 / -1; grid-template-columns: repeat(4, 1fr); }
   .case-collage { grid-template-columns: 1fr 1fr; }
-  .case-collage .ph:last-child { grid-column: 1 / -1; margin-top: 0; }
+  .case-collage .ph:last-child { grid-column: 1 / -1; margin-left: 0; }
 }
 
 @media (max-width: 720px) {
